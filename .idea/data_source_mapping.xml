@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$PROJECT_DIR$/functions.sql" value="d2ade1f3-9b31-42dc-96b2-29fb22ec4501" />
+    <file url="file://$PROJECT_DIR$/proceduri.sql" value="d2ade1f3-9b31-42dc-96b2-29fb22ec4501" />
+    <file url="file://$PROJECT_DIR$/schema.sql" value="d2ade1f3-9b31-42dc-96b2-29fb22ec4501" />
+    <file url="file://$PROJECT_DIR$/tests.sql" value="d2ade1f3-9b31-42dc-96b2-29fb22ec4501" />
+    <file url="file://$PROJECT_DIR$/triggeri.sql" value="d2ade1f3-9b31-42dc-96b2-29fb22ec4501" />
+  </component>
+</project>

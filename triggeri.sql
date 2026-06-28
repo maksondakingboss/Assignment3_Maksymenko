@@ -1,9 +1,9 @@
-﻿
+﻿-- таск 4 створюємо тригер який буде автоматично оновляти ордер тотал
 create or replace function update_order_total_trig()
     returns trigger as
 $$
 begin
-    update orders
+    update orders -- використовуємо calculate_order_total щоб порахувати нову суму
     set total_amount = calculate_order_total(
             coalesce(new.order_id, old.order_id)
                        )
@@ -13,7 +13,7 @@ begin
 end;
 $$ language plpgsql;
 
-
+-- тригер спрацьовує після insert/update/delete в order_items
 create or replace trigger update_order_total
     after insert or update or delete
     on order_items
@@ -25,6 +25,7 @@ execute function update_order_total_trig();
 select order_id, total_amount from orders where order_id = 1;
 call add_product_to_order(1, 3, 1);
 
+-- функція записує в order_log після створення замовлення
 
 create or replace function trg_log_order()
     returns trigger as $$
@@ -36,6 +37,7 @@ begin
 end;
 $$ language plpgsql;
 
+-- тригер спрацьовує після кожного нового замовлення
 create or replace trigger log_order
     after insert on orders
     for each row execute function trg_log_order();

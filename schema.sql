@@ -1,4 +1,5 @@
-﻿create table customers (
+﻿-- створення таблиць
+create table customers (
                            customer_id serial primary key,
                            full_name varchar(100) not null,
                            email varchar(100) unique not null,
